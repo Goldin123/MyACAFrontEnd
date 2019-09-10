@@ -17,7 +17,7 @@ namespace MyACAWebsite.Controllers
         {
             _context = context;
         }
-        public  IActionResult Index()
+        public IActionResult Index()
         {
             var users = _context.Users.ToList();
 
@@ -37,12 +37,13 @@ namespace MyACAWebsite.Controllers
 
         public IActionResult Login()
         {
+            var users = _context.Users.ToList();
             return View();
         }
 
         public IActionResult Register()
         {
-            var user = new User();
+
             return View();
         }
 
@@ -50,9 +51,47 @@ namespace MyACAWebsite.Controllers
         public IActionResult DoRegistration(User user)
         {
             if (ModelState.IsValid)
-            { }
-
+            {
+                int iMaxID = _context.Users.Max(a => (int)a.Id) + 1;
+                using (var db = _context)
+                {
+                    user.Id = iMaxID;
+                    db.Users.Add(user);
+                    db.SaveChanges();
+                }
+            }
             return RedirectToAction("Login");
+        }
+
+
+        [HttpPost]
+        public IActionResult DoAuthentication(Login login)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = _context.Users.Where(a => a.Email == login.Username && a.Password == login.Password).SingleOrDefault();
+                if (user != null)
+                {
+                    if (user.Id > 0)
+                    {
+                        GlobalVariables.User = $"{user.FirstName} {user.LastName}";
+                        GlobalVariables.Grade = $"{user.Grade}";
+                        return RedirectToAction("Landing");
+                    }
+                    else
+                        return RedirectToAction("Login");
+                }
+                else
+                    return RedirectToAction("Login");
+            }
+            else
+                return RedirectToAction("Login");
+        }
+    
+
+        public IActionResult Landing()
+        {
+            return View();
         }
 
     }

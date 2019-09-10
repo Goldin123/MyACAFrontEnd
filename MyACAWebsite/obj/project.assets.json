@@ -12961,11 +12961,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\goldin.baloyi\\source\\repos\\MyACAWebsite\\MyACAWebsite\\MyACAWebsite\\MyACAWebsite.csproj",
+      "projectUniqueName": "C:\\WorkspaceGoldin\\MyAcaWebsite\\MyACAFrontEnd\\MyACAWebsite\\MyACAWebsite.csproj",
       "projectName": "MyACAWebsite",
-      "projectPath": "C:\\Users\\goldin.baloyi\\source\\repos\\MyACAWebsite\\MyACAWebsite\\MyACAWebsite\\MyACAWebsite.csproj",
+      "projectPath": "C:\\WorkspaceGoldin\\MyAcaWebsite\\MyACAFrontEnd\\MyACAWebsite\\MyACAWebsite.csproj",
       "packagesPath": "C:\\Users\\goldin.baloyi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\goldin.baloyi\\source\\repos\\MyACAWebsite\\MyACAWebsite\\MyACAWebsite\\obj\\",
+      "outputPath": "C:\\WorkspaceGoldin\\MyAcaWebsite\\MyACAFrontEnd\\MyACAWebsite\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

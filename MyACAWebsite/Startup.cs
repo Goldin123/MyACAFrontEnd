@@ -26,7 +26,7 @@ namespace MyACAWebsite
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApiContext>(opt => opt.UseInMemoryDatabase());
+            services.AddDbContext<ApiContext>(opt => opt.UseInMemoryDatabase("MYACA_DB"));
 
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -79,9 +79,11 @@ namespace MyACAWebsite
                 Id = 1,
                 FirstName = "Luke",
                 LastName = "Skywalker",
-                Age = 10,
+                Age = 17,
                 Email = "a@a.com",
-                Password = "abc"
+                Password = "abc",
+                Grade = "12",
+                SAID = "123456789013"
             };
 
             context.Users.Add(testUser1);          

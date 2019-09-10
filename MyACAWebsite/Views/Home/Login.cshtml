@@ -1,4 +1,5 @@
-﻿@{
+﻿@model MyACAWebsite.Models.Login
+@{
     Layout = null;
 }
 
@@ -7,7 +8,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MVC6_Seed_Project</title>
+    <title>My ACA Login</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <environment names="Development">
@@ -15,12 +16,18 @@
         <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css" />
         <link rel="stylesheet" href="~/css/animate.css" />
         <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
     </environment>
     <environment names="Staging,Production">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
         <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
         <link rel="stylesheet" href="~/css/animate.css" />
         <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
     </environment>
 
 
@@ -32,17 +39,18 @@
             <div>
                 <h1 class="logo-name" style="font-size: 105px;">MyAca</h1>
             </div>
-            <h3>Welcome to My Aca</h3>            
+            <br />
             <p>Login in below.</p>
-            <form class="m-t" role="form" action="#">
+            <form class="m-t" role="form" asp-action="DoAuthentication">
                 <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Username" required="">
+                    <input type="email" class="form-control" asp-for="Username" placeholder="Username" required="">
+                    <span asp-validation-for="Username" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password" required="">
+                    <input type="password" class="form-control" asp-for="Password" placeholder="Password" required="">
+                    <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
                 <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
-
                 <a href="#"><small>Forgot password?</small></a>
                 <p class="text-muted text-center"><small>Do not have an account?</small></p>
                 <a class="btn btn-sm btn-white btn-block" asp-controller="Home" asp-action="Register">Create an account</a>

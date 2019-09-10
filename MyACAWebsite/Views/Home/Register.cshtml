@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MVC6_Seed_Project</title>
+    <title>My ACA Registration</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <environment names="Development">
@@ -17,20 +17,27 @@
         <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css" />
         <link rel="stylesheet" href="~/css/animate.css" />
         <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
     </environment>
     <environment names="Staging,Production">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
         <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
         <link rel="stylesheet" href="~/css/animate.css" />
         <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
     </environment>
 
 
 </head>
 <body class="gray-bg">
 
-    <div class="middle-box text-center loginscreen   animated fadeInDown">
+    <div class="middle-box text-center loginscreen   animated pulse">
         <div>
+            
             <div>
                 <h1 class="logo-name" style="font-size: 105px;">MyAca</h1>
             </div>
@@ -39,21 +46,44 @@
             <form class="m-t" role="form" asp-action="DoRegistration" method="post">
                 <div class="form-group">
                     <input type="text" class="form-control" asp-for="FirstName" placeholder="First Name" required="">
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control" asp-for="LastName" placeholder="Last Name" required="">
+                    <span asp-validation-for="LastName" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Email" required="">
+                    <select class="form-control m-b" name="grade" asp-for="Grade">                        
+                        <option value="10" default>Grade 10</option>
+                        <option value="11">Grade 11</option>
+                        <option value="12">Grade 12</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password" required="">
+                    <input type="text" class="form-control" asp-for="SAID" placeholder="SA-ID Number" required="">
+                    <span asp-validation-for="SAID" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <div class="checkbox"><label> <input type="checkbox"><i></i> Agree the terms and policy </label></div>
+                    <input type="number" class="form-control" asp-for="Age"  placeholder="Age" required="">                    
+                    <span asp-validation-for="Age" class="text-danger"></span>
                 </div>
-                <button type="submit" class="btn btn-primary block full-width m-b">Register</button>
+                <div class="form-group">
+                    <input type="email" class="form-control" asp-for="Email" placeholder="Email" required="">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
 
+                <div class="form-group">
+                    <input type="password" class="form-control" asp-for="Password" placeholder="Password" required="">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" asp-for="ConfirmPassword" placeholder="Confirm Password" required="">
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox"><label> <input type="checkbox" ><i></i> Agree the terms and policy </label></div>
+                </div>                
+                <button type="submit" class="btn btn-primary block full-width m-b">Register</button>
                 <p class="text-muted text-center"><small>Already have an account?</small></p>
                 <a class="btn btn-sm btn-white btn-block" asp-controller="Home" asp-action="Login">Login</a>
             </form>
