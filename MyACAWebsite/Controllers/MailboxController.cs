@@ -23,7 +23,7 @@ namespace MyACAWebsite.Controllers
         }
 
         public IActionResult EmailTemplates()
-        {
+        {  
             return View();
         }
 
