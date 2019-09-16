@@ -19,8 +19,6 @@ namespace MyACAWebsite.Controllers
         }
         public IActionResult Index()
         {
-            var users = _context.Users.ToList();
-
             return View();
         }
 
@@ -37,8 +35,23 @@ namespace MyACAWebsite.Controllers
 
         public IActionResult Login()
         {
-            var users = _context.Users.ToList();
+           
             return View();
+        }
+
+        public IActionResult Logout()
+        {
+            ClearCookie();
+            return RedirectToAction("Login");
+        }
+
+        void ClearCookie()
+        {
+            GlobalVariables.UserID = 0;
+            GlobalVariables.User = string.Empty;
+            GlobalVariables.Age = string.Empty;
+            GlobalVariables.Grade = string.Empty;
+            GlobalVariables.ErrorMesage = string.Empty;
         }
 
         public IActionResult Register()
@@ -79,20 +92,73 @@ namespace MyACAWebsite.Controllers
                         return RedirectToAction("Landing");
                     }
                     else
+                    {
+                        GlobalVariables.ErrorMesage = "User Does not Exist.";
                         return RedirectToAction("Login");
+                    }
                 }
                 else
+                {
+                    GlobalVariables.ErrorMesage = "User Does not Exist.";
                     return RedirectToAction("Login");
+                }
             }
+            else
+            {
+                GlobalVariables.ErrorMesage = "Please try Again";
+                return RedirectToAction("Login");
+            }
+        }
+        public IActionResult Landing()
+        {
+            if (!string.IsNullOrEmpty(GlobalVariables.User))
+                return View();
             else
                 return RedirectToAction("Login");
         }
-    
-
-        public IActionResult Landing()
+        public IActionResult Profile()
         {
-            return View();
+            if (!string.IsNullOrEmpty(GlobalVariables.User))
+                return View();
+            else
+                return RedirectToAction("Login");
         }
+        public IActionResult Calendar()
+        {
+            if (!string.IsNullOrEmpty(GlobalVariables.User))
+                return View();
+            else
+                return RedirectToAction("Login");
+        }
+        public IActionResult Contacts()
+        {
+            if (!string.IsNullOrEmpty(GlobalVariables.User))
+                return View();
+            else
+                return RedirectToAction("Login");
+        }
+        public IActionResult Notes()
+        {
+            if (!string.IsNullOrEmpty(GlobalVariables.User))
+                return View();
+            else
+                return RedirectToAction("Login");
+        }
+        public IActionResult Blog()
+        {
+            if (!string.IsNullOrEmpty(GlobalVariables.User))
+                return View();
+            else
+                return RedirectToAction("Login");
+        }
+        public IActionResult UploadFile()
+        {
+            if (!string.IsNullOrEmpty(GlobalVariables.User))
+                return View();
+            else
+                return RedirectToAction("Login");
+        }
+        
 
     }
 }

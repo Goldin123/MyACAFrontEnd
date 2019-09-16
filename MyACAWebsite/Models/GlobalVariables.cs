@@ -11,6 +11,7 @@ namespace MyACAWebsite.Models
         public static string User { get; set; }
         public static string Grade { get; set; }
         public static string Age { get; set; }
+        public static string ErrorMesage { get; set; }
 
     }
 }

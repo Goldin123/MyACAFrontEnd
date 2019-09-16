@@ -54,9 +54,23 @@
                 <a href="#"><small>Forgot password?</small></a>
                 <p class="text-muted text-center"><small>Do not have an account?</small></p>
                 <a class="btn btn-sm btn-white btn-block" asp-controller="Home" asp-action="Register">Create an account</a>
-            </form>            
+            </form>
+            <br />
+            @if (!string.IsNullOrEmpty(GlobalVariables.ErrorMesage))
+            {
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        Error Occured
+                    </div>
+                    <div class="panel-body">
+                        <p>@GlobalVariables.ErrorMesage</p>
+                    </div>
+                    <div class="panel-footer">
+                        Please Try Again
+                    </div>
+                </div>
+            }
         </div>
     </div>
-
 </body>
 </html>

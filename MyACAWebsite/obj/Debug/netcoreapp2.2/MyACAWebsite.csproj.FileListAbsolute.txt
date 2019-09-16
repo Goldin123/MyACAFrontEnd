@@ -67,4 +67,14 @@ C:\WorkspaceGoldin\MyAcaWebsite\MyACAFrontEnd\MyACAWebsite\obj\Debug\netcoreapp2
 C:\WorkspaceGoldin\MyAcaWebsite\MyACAFrontEnd\MyACAWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_TopNavbar.g.cshtml.cs
 C:\WorkspaceGoldin\MyAcaWebsite\MyACAFrontEnd\MyACAWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Footer.g.cshtml.cs
 C:\WorkspaceGoldin\MyAcaWebsite\MyACAFrontEnd\MyACAWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_RightSidebar.g.cshtml.cs
+C:\WorkspaceGoldin\MyAcaWebsite\MyACAFrontEnd\MyACAWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Home\Profile.g.cshtml.cs
+C:\WorkspaceGoldin\MyAcaWebsite\MyACAFrontEnd\MyACAWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Mailbox\Inbox.g.cshtml.cs
+C:\WorkspaceGoldin\MyAcaWebsite\MyACAFrontEnd\MyACAWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Mailbox\EmailView.g.cshtml.cs
+C:\WorkspaceGoldin\MyAcaWebsite\MyACAFrontEnd\MyACAWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Mailbox\ComposeEmail.g.cshtml.cs
+C:\WorkspaceGoldin\MyAcaWebsite\MyACAFrontEnd\MyACAWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Mailbox\EmailTemplates.g.cshtml.cs
+C:\WorkspaceGoldin\MyAcaWebsite\MyACAFrontEnd\MyACAWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Home\Calendar.g.cshtml.cs
+C:\WorkspaceGoldin\MyAcaWebsite\MyACAFrontEnd\MyACAWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Home\Contacts.g.cshtml.cs
 C:\WorkspaceGoldin\MyAcaWebsite\MyACAFrontEnd\MyACAWebsite\obj\Debug\netcoreapp2.2\MyACAWebsite.csprojAssemblyReference.cache
+C:\WorkspaceGoldin\MyAcaWebsite\MyACAFrontEnd\MyACAWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Home\Notes.g.cshtml.cs
+C:\WorkspaceGoldin\MyAcaWebsite\MyACAFrontEnd\MyACAWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Home\Blog.g.cshtml.cs
+C:\WorkspaceGoldin\MyAcaWebsite\MyACAFrontEnd\MyACAWebsite\obj\Debug\netcoreapp2.2\Razor\Views\Home\UploadFile.g.cshtml.cs
